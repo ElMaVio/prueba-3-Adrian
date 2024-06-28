@@ -68,7 +68,14 @@ while True:
 
     def agregar_categoria():
         with open("biblioteca.json", mode="r") as file:
-            dsa
+            leer = json.load(file)
+            categoria_nueva = {
+                "CategoriaID": len(leer["Categoria"]) + 1,
+                "Nombre": input("Ingresar nombre de la categoria nueva: "),
+            }
+            leer["CategoriaID"].append(categoria_nueva)
+        with open("biblioteca.json", mode="w") as file:
+            json.dump()
             
 
 
@@ -135,13 +142,7 @@ while True:
             cantidad = contador_prestamo.get(id_libro,0)
             reporte.append(titulo,cantidad)
 
-        print("**********************************")
-        print("* Libro - - - - - Veces prestado *")
-        print("**********************************")
-
         for titulo, cantidad in reporte:
             print(f"Libro: {titulo}, Veces prestado: {cantidad}")
-        
-        print("**********************************")
-        print("* Libro - - - - - Veces prestado *")
+
         print("**********************************")
