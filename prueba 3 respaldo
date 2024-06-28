@@ -54,7 +54,7 @@ while True:
 
 
     def editar_categoria():
-        with open("Biblioteca.json", mode="r") as file:
+        with open("biblioteca.json", mode="r") as file:
 
             leer = json.load(file)
             buscar_id = int(input("ingrese id de la categoria que desea editar"))
@@ -74,9 +74,14 @@ while True:
 
 
     def eliminar_categoria():
-        buscar_id = int(input("Ingresar id de categoria a buscar"))
-        with open("Biblioteca.json", mode="r") as file:
-            d
+        with open("biblioteca.json", mode="r") as file:
+            datos = json.load(file)
+            buscar_id = int(input("Ingresar id de categoria a buscar"))
+            if buscar_id in datos["Categoria"]:
+                del(datos["Categproa"][id_categoria])
+        
+        with open("biblioteca.json", mode="w") as file:
+            sa
 
 
 
@@ -91,4 +96,11 @@ while True:
 
 
     def reportes():
-        das
+        with   open("Biblioteca.json", mode="r") as file:
+            leer = json.load(file)
+            for r in leer["Prestamo"]:
+
+        
+        print("**********************************")
+        print("* Libro - - - - - Veces prestado *")
+        print("**********************************")
