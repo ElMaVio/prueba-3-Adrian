@@ -64,6 +64,8 @@ while True:
             print("")
             mantenedor_categoria()
 
+
+
     def agregar_categoria():
         with open("biblioteca.json", mode="r") as file:
             dsa
@@ -115,11 +117,30 @@ while True:
     def reportes():
         with open("Biblioteca.json", mode="r") as file:
             leer = json.load(file)
-            for reporte_prestamo in leer["Prestamo"]:
-                print(reporte_prestamo)
-            for prestamos in leer["Prestamo"]
-                with open("Reportes_biblioteca_mundo_libro.json", mode="w") as file
-                    file.write{}
+            reporte_prestamo = leer["Prestamo"]
+            libro = leer["Libro"]
+
+            contador_prestamo={}
+            for prestamo in reporte_prestamo:
+                id_libro = prestamo["LibroID"]
+                if id_libro in contador_prestamo:
+                    contador_prestamo[id_libro] += 1
+                else:
+                    contador_prestamo[id_libro] = 1
+
+        reporte=[]
+        for libros in libro:
+            titulo = libros["Titulo"]
+            id_libro = libro["LibroID"]
+            cantidad = contador_prestamo.get(id_libro,0)
+            reporte.append(titulo,cantidad)
+
+        print("**********************************")
+        print("* Libro - - - - - Veces prestado *")
+        print("**********************************")
+
+        for titulo, cantidad in reporte:
+            print(f"Libro: {titulo}, Veces prestado: {cantidad}")
         
         print("**********************************")
         print("* Libro - - - - - Veces prestado *")
