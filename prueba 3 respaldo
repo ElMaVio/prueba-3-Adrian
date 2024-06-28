@@ -1,40 +1,94 @@
 import json, os
 
  
+while True:
+    def menu_principal():
+        print("*********************")
+        print("*    MUNDO LIBRO    *")
+        print("*********************")
+        print("[1] - Mantenedor de categorias. n\[2] - Reportes. n\[3] - Salir")
 
-def menu_principal():
-    print("*********************")
-    print("*    MUNDO LIBRO    *")
-    print("*********************")
-    print("[1] - Mantenedor de categorias. n\[2] - Reportes. n\[3] - Salir")
+        opciones = int(input("n\Ingrese una opcion: "))
+        match opciones:
+            case 1:
+                mantenedor_categoria()
 
-
-def mantenedor_categoria():
-    print("*******************************")
-    print("*   MANTENEDOR DE CATEGORIA   *")
-    print("*******************************")
-    print("[1] - Agregar categoria. n\[2] - Editar categoria. n\[3] - Eliminar categoria. n\[4] - Buscar categoria. n\[5] - Volver")
-
-
-def agregar_categoria():
-    with open("biblioteca.json", mode="r") as file:
+            case 2:
+                reportes()
+            
+            case 3:
+                break
+        if 1 < opciones < 4:
+            menu_principal()
+                
         
 
 
-def editar_categoria():
-    with open("Biblioteca.json", mode="r") as file:
-        leer = json.load(file)
-        id = int(input("ingrese id de la categoria que desea editar"))
-        
+    def mantenedor_categoria():
+        print("*******************************")
+        print("*   MANTENEDOR DE CATEGORIA   *")
+        print("*******************************")
+        print("[1] - Agregar categoria. n\[2] - Editar categoria. n\[3] - Eliminar categoria. n\[4] - Buscar categoria. n\[5] - Volver")
+
+        opciones = int(input("n\Ingrese una opcion: "))
+        match opciones:
+            case 1:
+                agregar_categoria()
+            case 2:
+                editar_categoria()
+            case 3: 
+                eliminar_categoria()
+            case 4: 
+                buscar_categoria()
+            case 5:
+                menu_principal()
+
+        if 1 < opciones < 6:
+            print("Error, ingrese nuevamente")
+            mantenedor_categoria()
+
+    def agregar_categoria():
+        with open("biblioteca.json", mode="r") as file:
+            dsa
+            
+
+
+    def editar_categoria():
+        with open("Biblioteca.json", mode="r") as file:
+
+            leer = json.load(file)
+            buscar_id = int(input("ingrese id de la categoria que desea editar"))
+
+            for categoria in leer["categoria"]:
+
+                if categoria["categoriaID"] == buscar_id:
+
+                    id_categoria = str(input("Ingresar nuevo ID de la categoria."))
+                    nombre_categoria = str(input("Ingresar nuevo nombre de la categoria."))
+
+                categoria["categoriaID"] = id_categoria
+                categoria["nombre"] = nombre_categoria
+                
 
 
 
 
-def eliminar_categoria():
-    with open("Biblioteca.json", mode="r") as file:
+    def eliminar_categoria():
+        buscar_id = int(input("Ingresar id de categoria a buscar"))
+        with open("Biblioteca.json", mode="r") as file:
+            d
 
 
 
 
-def buscar_categoria():
-    print("")
+    def buscar_categoria():
+        buscar_id = int(input("Ingresar categoria a buscar"))
+        with open("Biblioteca.json", mode="r") as file:
+            datos_json = json.load(file)
+            for categoria in datos_json["Categoria"]:
+                print(categoria)
+
+
+
+    def reportes():
+        das
