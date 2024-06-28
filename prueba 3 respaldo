@@ -11,14 +11,20 @@ while True:
         opciones = int(input("n\Ingrese una opcion: "))
         match opciones:
             case 1:
+                os.system("cls")
                 mantenedor_categoria()
 
             case 2:
+                os.system("cls")
                 reportes()
             
             case 3:
                 break
         if 1 < opciones < 4:
+            os.system("cls")
+            print("Error al elegir una opcion, intente nuevamente")
+            print("")
+            print("")
             menu_principal()
                 
         
@@ -33,18 +39,29 @@ while True:
         opciones = int(input("n\Ingrese una opcion: "))
         match opciones:
             case 1:
+                os.system("cls")
                 agregar_categoria()
+            
             case 2:
+                os.system("cls")
                 editar_categoria()
+            
             case 3: 
+                os.system("cls")
                 eliminar_categoria()
+            
             case 4: 
+                os.system("cls")
                 buscar_categoria()
+            
             case 5:
+                os.system("cls")
                 menu_principal()
-
+                
         if 1 < opciones < 6:
+            os.system("cls")
             print("Error, ingrese nuevamente")
+            print("")
             mantenedor_categoria()
 
     def agregar_categoria():
@@ -96,10 +113,13 @@ while True:
 
 
     def reportes():
-        with   open("Biblioteca.json", mode="r") as file:
+        with open("Biblioteca.json", mode="r") as file:
             leer = json.load(file)
-            for r in leer["Prestamo"]:
-
+            for reporte_prestamo in leer["Prestamo"]:
+                print(reporte_prestamo)
+            for prestamos in leer["Prestamo"]
+                with open("Reportes_biblioteca_mundo_libro.json", mode="w") as file
+                    file.write{}
         
         print("**********************************")
         print("* Libro - - - - - Veces prestado *")
