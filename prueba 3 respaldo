@@ -1,0 +1,19 @@
+import json, os
+
+
+def mantenedor_categoria():
+    print("*******************************")
+    print("*   MANTENEDOR DE CATEGORIA   *")
+    print("*******************************")
+    
+
+
+def agregar_categoria():
+    with open("biblioteca.json")
+
+def menu_principal():
+    print("*********************")
+    print("*    MUNDO LIBRO    *")
+    print("*********************")
+    print("[1] - Mantenedor de categorias. n\[2] - Reportes. n\[3] - Salir")
+
